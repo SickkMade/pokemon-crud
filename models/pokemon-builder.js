@@ -1,12 +1,12 @@
-
+const mongoose = require("mongoose")
 
 async function getList(){
     try{
         const pokemonCount = 151
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=pokemonCount")
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit="+pokemonCount)
         const data = await response.json();
         let pokeList = Array(pokemonCount)
-        for(let i = 0; i < data.results.length; i++){
+        for(let i = 0; i < pokemonCount; i++){
             pokeList[i] = (data.results[i]['name'])
         }
         return pokeList
@@ -15,6 +15,14 @@ async function getList(){
     }
 }
 
+const userSchema = new mongoose.Schema({
+    pokemon: {
+        type: [String],
+        required:true,
+    },
+})
+
 module.exports = {
-    getPokeList: getList
+    getPokeList: getList,
+    AddToUser: mongoose.model("user", userSchema)
 }

@@ -5,10 +5,14 @@
     </head>
     <body>
         <h1>READY TO BUILD POKEMON?</h1>
-        <select name="pokemon-151">
-            <% for(let i = 0; i < pokemon.length; i++){ %>
-                <option value="<%= pokemon[i] %>"><%= pokemon[i]%></option>
-            <% } %>
-        </select>
+        <form action="/pokemon-builder/addToUserTeam", method="POST">
+            <select name="pokemon-151">
+                <option value="">Select a Pokemon</option>
+                <% for(let i = 0; i < pokemon.length; i++){ %>
+                    <option value="<%= pokemon[i] %>"><%= pokemon[i]%></option>
+                <% } %>
+            </select>
+            <input type="submit">
+        </form>
     </body>
 </html>
