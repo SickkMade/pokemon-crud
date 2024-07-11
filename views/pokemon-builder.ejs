@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Pokemon Builder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>READY TO BUILD POKEMON?</h1>
+        <select name="pokemon-151">
+            <% for(let i = 0; i < pokemon.length; i++){ %>
+                <option value="<%= pokemon[i] %>"><%= pokemon[i]%></option>
+            <% } %>
+        </select>
+    </body>
+</html>
