@@ -4,8 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>READY TO BUILD POKEMON?</h1>
-        <form action="/pokemon-builder/addToUserTeam", method="POST">
+        <h1>READY TO BUILD POKEMON? TRAINER: <%= name %></h1>
+        <form action="/pokemon-builder/addToUserTeam?name=<%= name %>", method="POST">
             <select name="pokemon-151">
                 <option value="">Select a Pokemon</option>
                 <% for(let i = 0; i < pokemon.length; i++){ %>
@@ -14,5 +14,10 @@
             </select>
             <input type="submit">
         </form>
+        <section>
+            <% for(let i = 0; i < chosenPokemon.length; i++) { %>
+                <div><%= chosenPokemon[i] %></div>
+            <% } %>
+        </section>
     </body>
 </html>
