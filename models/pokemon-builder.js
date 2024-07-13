@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
     },
 })
 
+
 module.exports = {
     getPokeList: getList,
-    AddToUser: mongoose.model("user", userSchema)
+    AddToUser: mongoose.model("user", userSchema),
 }
