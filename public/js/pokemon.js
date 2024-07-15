@@ -7,7 +7,15 @@ async function getPokeImage(pokemon){
         console.error(e)
     }
 }
-document.querySelectorAll(".pokeImage").forEach(async pokemon => {
+
+async function deletePokemon(){
+    
+}
+
+const pokemen = document.querySelectorAll(".pokeImage")
+pokemen.forEach(async pokemon => {
+    pokemon.addEventListener("click", deletePokemon)
+
     const pokeSource = await getPokeImage(pokemon.parentElement.textContent)
     pokemon.src = pokeSource
 })

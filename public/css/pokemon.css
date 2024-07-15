@@ -1,0 +1,4 @@
+img:hover{
+    filter:hue-rotate(180deg) contrast(50%);;
+    cursor:pointer;
+}
